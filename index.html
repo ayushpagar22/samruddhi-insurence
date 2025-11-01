@@ -16,7 +16,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samruddhi Insurance - Vehicle Insurance, Loan & RTO Services</title>
-  
+      <link rel="icon" href="logo.png" type="image/x-icon">
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   
@@ -103,7 +104,7 @@
     header {
       background: ghostwhite;
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      position: fixed;
+      position: absolute;
       top: 0;
       width: 100%;
       z-index: 1000;
@@ -1089,6 +1090,24 @@ h1 {
       .hero-content p { font-size: 1rem; }
     }
 
+@media (max-width: 768px) {
+  nav {
+    display: none; /* Hidden by default on mobile */
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    /* ... other styles */
+  }
+
+  nav.active { 
+    display: flex; /* Shown when hamburger is clicked */
+  }
+
+  .menu-toggle { 
+    display: block; /* Hamburger icon is made visible */
+  }
+}
   </style>
 </head>
 <body>
@@ -1100,6 +1119,7 @@ h1 {
   </div>
 
   <!-- Header -->
+
   <header id="header">
     <div class="container">
       <div class="logo">
@@ -1726,6 +1746,17 @@ h1 {
         setLanguage(savedLang);
 
     });
+
+// --- 2. Mobile Navbar Toggle ---
+const mobileMenu = document.getElementById('mobile-menu');
+const navbar = document.getElementById('navbar');
+
+mobileMenu.addEventListener('click', () => {
+    navbar.classList.toggle('active'); // Toggles the .active class
+    /* ... icon class toggles */
+});
+
+
   </script>
 </body>
 </html>
